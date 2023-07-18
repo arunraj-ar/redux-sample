@@ -29,7 +29,7 @@ const Counter = () => {
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>{show ? counter : <pre> </pre>}</div>
+      <div contentEditable className={classes.value}>{show ? counter : <pre> </pre>}</div>
       <div>
         <button onClick={incrementHandler} disabled={!show}>
           +
