@@ -1,4 +1,4 @@
-import { DECREMENT, INCREASE, INCREMENT, TOGGLE } from "./constants";
+import { DECREMENT, INCREASE, INCREMENT, SET, TOGGLE } from "./constants";
 
 export const incrementCounter = () => ({
   type: INCREMENT,
@@ -10,6 +10,11 @@ export const increaseCounter = (value) => ({
   type: INCREASE,
   value: value,
 });
+
+export const setCounter = (value) =>({
+  type: SET,
+  value: value
+})
 export const toggleCounter = () => ({
   type: TOGGLE,
 });

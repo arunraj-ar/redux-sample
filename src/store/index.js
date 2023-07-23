@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { DECREMENT, INCREASE, INCREMENT, TOGGLE } from "./constants";
+import { DECREMENT, INCREASE, INCREMENT, SET, TOGGLE } from "./constants";
 
 const initialState = {
   counter: 0,
@@ -15,6 +15,8 @@ const counterReducer = (state = initialState, action) => {
       return { ...state, counter: state.counter + action.value };
     case TOGGLE:
       return { ...state, showCounter: !state.showCounter };
+    case SET:
+      return { ...state, counter: action.value };
     default:
       return state;
   }
