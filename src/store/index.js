@@ -8,15 +8,15 @@ const initialState = {
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
-      return { ...state, counter: state.counter + 1 };
+      return { ...state, counter: parseInt(state.counter) + 1 };
     case DECREMENT:
-      return { ...state, counter: state.counter - 1 };
+      return { ...state, counter:  parseInt(state.counter) - 1 };
     case INCREASE:
-      return { ...state, counter: state.counter + action.value };
+      return { ...state, counter:  parseInt(state.counter) +  parseInt(action.value) };
     case TOGGLE:
       return { ...state, showCounter: !state.showCounter };
     case SET:
-      return { ...state, counter: action.value };
+      return { ...state, counter:  parseInt(action.value) };
     default:
       return state;
   }

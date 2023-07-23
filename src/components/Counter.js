@@ -27,15 +27,13 @@ const Counter = () => {
     dispatch(increaseCounter(value));
   };
   const setHandler = (e) => {
-    dispatch(setCounter(e.target.value));
+    dispatch(setCounter(e.target.value ? e.target.value : 0));
   };
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div contentEditable className={classes.value} onChange={setHandler}>
-        {show ? counter : <pre> </pre>}
-      </div>
+      <input type="number"  disabled={!show} className={classes.value} onChange={setHandler} value={show ? counter : " "}/>
       <div>
         <button onClick={incrementHandler} disabled={!show}>
           +
